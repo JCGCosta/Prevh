@@ -8,7 +8,7 @@
 
 name: Publish to PyPI and TestPyPI
 
-on: release
+on: push
 
 jobs:
   build-n-publish:
