@@ -1,1 +1,1 @@
-from .PrevhClassifier import PrevhClassifier
+from PrevhClassifier import PrevhClassifier
