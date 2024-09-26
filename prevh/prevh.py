@@ -1,2 +1,1 @@
-from ._PrevhClassifier import PrevhClassifier
-import dataSetExamples
+from .PrevhClassifier import PrevhClassifier

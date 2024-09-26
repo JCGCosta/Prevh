@@ -1,0 +1,9 @@
+venv/
+
+.idea/
+
+LocalTesting/
+
+Legacy/
+
+*/pycache/

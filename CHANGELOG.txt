@@ -1,8 +1,10 @@
 Change Log
 ===============
-0.0.9 (26/03/2022)
+0.1.0 (24/09/2024)
 ------------------
 MAJOR CHANGES
-- Added simple predict funtionality
-- Added KNR and KNN space delimitation methods
-- Added TestTrainSplit and KFold-CrossValidation score methods to evalueate databases
+- Update in the README.md
+- Update the required libraries for security reasons
+- Change code structure to be more readable
+- Added the Evaluator object, and metric plots
+------------------
