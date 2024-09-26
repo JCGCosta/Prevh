@@ -1,4 +1,4 @@
-# Prevh
+# PrevhClassifier
 This package implements the Prevh classification algorithm.
 > The algorithm is based in the follow [research](https://zenodo.org/record/6090322#.Yj98bKbMKUk) **Pages 71-76**.
  
@@ -8,41 +8,65 @@ This package implements the Prevh classification algorithm.
 
 > This package can be installed with the following command: **pip install prevhlib**
 
-## Dataset
-***The file must be a CSV file and the header must be included.***
-
-The columns must be in the following order:
-* The features columns;
-* The label column;
-* The relevance column (Optional).
-
-```text
-feature1,feature2,feature3,label,relevance
-10,10,10,Blue,1.0
-15,15,15,Blue,1.0
-20,20,20,Blue,1.0
-45,45,45,Green,1.0
-50,50,50,Green,1.0
-55,55,55,Green,1.0
-80,80,80,Red,1.0
-85,85,85,Red,1.0
-90,90,90,Red,1.0
-```
-
 ## Python example:
 
 ```python
-import prevh as ph
+import numpy as np
 import pandas as pd
-# Creates the classifier
-prevhClass = PrevhClassifier(pd.read_csv("irisDataCSV.csv",","))
-# Label recurrence in the dataset (Important to use KNR method)
-print(prevhClass.labelCount)
-# Rows count in the dataset (Important to use KNN method)
-print(prevhClass.rowsCount)
-# Calculate the dataset score using the TrainTestSplit and KFold Cross-Validation methods
-TrainTestSplitScore = prevhclass.calculateScore("TrainTestSplit", algorithm="KNN", k=4, train_size=0.8, seed=42)
-KfoldScore = prevhclass.calculateScore("KFold", algorithm="KNR", k=35, n_splits=15, seed=42)
-print("TrainTestSplitScore:", TrainTestSplitScore)
-print("KFoldScore:", KfoldScore)
+from prevh.PrevhClassifier import PrevhClassifier
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+
+if __name__ == '__main__':
+    iris = pd.read_csv('Datasets/iris.csv')
+
+    X = iris.iloc[:, 0:4].values
+    y = iris.iloc[:, 4].values
+    header = (iris.columns[:-1], iris.columns[-1])
+
+    prevh = PrevhClassifier(distance_algorithm="euclidean")
+    prevh.fit(X, y, header=header, encoder=LabelEncoder(), scaler=StandardScaler())
+    
+    print(prevh)
+    # Outputs: 
+    # {  
+    #    "dataset": {
+    #       "header": {
+    #          "features": "Index(['sepal length', 'sepal width', 'petal length', 'petal width'], dtype='object')",
+    #          "classes": "class"
+    #       },
+    #       "encoder": "LabelEncoder()",
+    #       "scaler": "StandardScaler()"
+    #    },
+    #    "distance": "euclidean"
+    # }
+    
+    print(prevh.classify(np.array([5.1,3.5,1.4,0.2]), K=3))
+    # Outputs: (array(['Iris-setosa'], dtype=object), np.float64(0.2653212465045153))
+
+    kfold_split_arguments = {
+        "n_splits": 5,
+        "random_state": 42,
+        "shuffle": True
+    }
+
+    Evaluation_Results = prevh.evaluate(1,"kfold_cross_validation", kfold_split_arguments)
+
+    print(Evaluation_Results.get_metrics())
+    # Outputs:
+    #       accuracy  precision    recall  f1-score
+    # 0     0.966667   0.972222  0.962963  0.965899
+    # 1     0.966667   0.969697  0.952381  0.958486
+    # 2     0.966667   0.962963  0.966667  0.962848
+    # 3     0.900000   0.911681  0.905556  0.907368
+    # 4     0.966667   0.972222  0.972222  0.971014
+    # Mean  0.953333   0.957757  0.951958  0.953123
+
+    Evaluation_Results.plot_confusion_matrices()
 ```
+
+<img src="./confusion_matrix_example.png" width = "600">
+
+## Next Steps
+
+- In the next steps I will add support to other split, evaluation, encoder, and decoder methods.
+- I expect to in new versions to comparisons between other machine learn method and the prevh classifier.
