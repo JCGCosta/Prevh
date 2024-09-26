@@ -4,6 +4,8 @@ This package implements the Prevh classification algorithm.
  
 > [Package Documentation](https://pypi.org/project/prevhlib/).
 
+> [![Publish to PyPI and TestPyPI](https://github.com/JCGCosta/Prevh/actions/workflows/python-publish.yml/badge.svg)](https://github.com/JCGCosta/Prevh/actions/workflows/python-publish.yml)
+
 # User Guide
 
 > This package can be installed with the following command: **pip install prevhlib**
