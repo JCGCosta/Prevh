@@ -6,7 +6,7 @@ classifiers = [
     'Intended Audience :: Developers',
     'Operating System :: Microsoft :: Windows :: Windows 11',
     'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-    'Programming Language :: Python :: 3.11.9'
+    'Programming Language :: Python :: 3.11'
 ]
 
 setup(
