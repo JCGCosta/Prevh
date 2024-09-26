@@ -11,7 +11,7 @@ classifiers = [
 
 setup(
     name='prevhlib',
-    version='0.1.1',
+    version='0.1.2',
     description='Data Mining package implementing the PrevhClassifier algorithm.',
     long_description=
     f"{open('README.md').read()}\n\n" +

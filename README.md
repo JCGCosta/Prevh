@@ -66,7 +66,7 @@ if __name__ == '__main__':
     Evaluation_Results.plot_confusion_matrices()
 ```
 
-<img src="./confusion_matrix_example.png" width = "600">
+<img src="https://raw.githubusercontent.com/JCGCosta/Prevh/refs/heads/main/confusion_matrix_example.png" width = "600">
 
 ## Next Steps
 
