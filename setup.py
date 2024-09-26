@@ -6,12 +6,12 @@ classifiers = [
     'Intended Audience :: Developers',
     'Operating System :: Microsoft :: Windows :: Windows 11',
     'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
-    'Programming Language :: Python :: 3.11'
+    'Programming Language :: Python :: 3.11.9'
 ]
 
 setup(
     name='prevhlib',
-    version='0.1.0',
+    version='0.1.1',
     description='Data Mining package implementing the PrevhClassifier algorithm.',
     long_description=
     f"{open('README.md').read()}\n\n" +
