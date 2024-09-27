@@ -1,6 +1,6 @@
 import numpy as np
-from Assets.Dataset import Dataset
-from Assets.Distances import Distances
+from prevh.Assets.Dataset.Dataset import Dataset
+from prevh.Assets.Distances import Distances
 
 def predict(dataset: Dataset,
             distance: Distances,

@@ -10,7 +10,7 @@ classifiers = [
 
 setup(
     name='prevhlib',
-    version='0.1.5',
+    version='0.1.6',
     description='Data Mining package implementing the PrevhClassifier algorithm.',
     long_description=
     f"{open('README.md').read()}\n\n" +
@@ -22,7 +22,7 @@ setup(
     license='GNU General Public License v3 (GPLv3)',
     classifiers=classifiers,
     keywords='DataMining',
-    #py_modules=["prevh"],
+    #py_modules=["prevh", "Assets"],
     #package_dir={'': 'prevh'},
     packages=find_packages(),
     install_requires=['numpy', 'pandas', 'matplotlib', 'scikit-learn', 'seaborn']

@@ -3,11 +3,11 @@ import json
 import numpy as np
 import pandas as pd
 
-from Assets.Dataset.Dataset import Dataset
-from Assets.Distances import Distances
-from Assets.Evaluator.Evaluation import Evaluation
-from Assets.Evaluator.Metrics import Metrics
-from Assets.Predict import predict
+from prevh.Assets.Dataset.Dataset import Dataset
+from prevh.Assets.Distances import Distances
+from prevh.Assets.Evaluator.Evaluation import Evaluation
+from prevh.Assets.Evaluator.Metrics import Metrics
+from prevh.Assets.Predict import predict
 
 
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler, LabelEncoder

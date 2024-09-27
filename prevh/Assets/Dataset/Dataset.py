@@ -1,7 +1,7 @@
 import pandas as pd
 
-from Assets.Utils.ErrorHandler import ErrorHandler
-from Assets.Dataset.Split import *
+from prevh.Assets.Utils.ErrorHandler import ErrorHandler
+from prevh.Assets.Dataset.Split import *
 
 class Dataset:
     def __init__(self):

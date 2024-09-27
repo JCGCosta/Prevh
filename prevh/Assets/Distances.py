@@ -1,8 +1,8 @@
 from typing import Callable
 import numpy as np
-from Assets.Dataset.Dataset import Dataset
-from Assets.Utils.Static import *
-from Assets.Utils.ErrorHandler import ErrorHandler
+from prevh.Assets.Dataset.Dataset import Dataset
+from prevh.Assets.Utils.Static import *
+from prevh.Assets.Utils.ErrorHandler import ErrorHandler
 
 class Distances:
     def __init__(self, algorithm: str, kwargs: dict | None = None):
