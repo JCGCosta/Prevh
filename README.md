@@ -15,7 +15,7 @@ This package implements the Prevh classification algorithm.
 ```python
 import numpy as np
 import pandas as pd
-from prevh.PrevhClassifier import PrevhClassifier
+from __init__.PrevhClassifier import PrevhClassifier
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 
 if __name__ == '__main__':
@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
     prevh = PrevhClassifier(distance_algorithm="euclidean")
     prevh.fit(X, y, header=header, encoder=LabelEncoder(), scaler=StandardScaler())
-    
+
     print(prevh)
     # Outputs: 
     # {  
@@ -41,8 +41,8 @@ if __name__ == '__main__':
     #    },
     #    "distance": "euclidean"
     # }
-    
-    print(prevh.classify(np.array([5.1,3.5,1.4,0.2]), K=3))
+
+    print(prevh.classify(np.array([5.1, 3.5, 1.4, 0.2]), K=3))
     # Outputs: (array(['Iris-setosa'], dtype=object), np.float64(0.2653212465045153))
 
     kfold_split_arguments = {
@@ -51,7 +51,7 @@ if __name__ == '__main__':
         "shuffle": True
     }
 
-    Evaluation_Results = prevh.evaluate(1,"kfold_cross_validation", kfold_split_arguments)
+    Evaluation_Results = prevh.evaluate(1, "kfold_cross_validation", kfold_split_arguments)
 
     print(Evaluation_Results.get_metrics())
     # Outputs:
