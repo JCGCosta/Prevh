@@ -88,7 +88,7 @@ class PrevhClassifier:
                 pred_y.append(predict(train_ds, self.distance, test_X, K)[0])
             metrics.append(self.metrics.gen_metrics(split[3], np.array(pred_y)))
             confusion_matrix.append(self.metrics.gen_confusion_matrix(split[3], np.array(pred_y)))
-        metrics = pd.DataFrame(metrics, columns=["accuracy", "precision", "recall", "f1-score"])
+        metrics = pd.DataFrame(metrics, columns=["accuracy", "precision", "recall", "f1-score", "r2-score", "MSE", "MAE"])
         return Evaluation(metrics, confusion_matrix, self.dataset.get_labels())
 
     def classify(self,

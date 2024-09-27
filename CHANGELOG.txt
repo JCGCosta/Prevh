@@ -1,10 +1,9 @@
 Change Log
 ===============
-0.1.6 (27/09/2024)
+0.2.0 (27/09/2024)
 ------------------
 MAJOR CHANGES
 - Update in the README.md
-- Update the required libraries for security reasons
-- Change code structure to be more readable
-- Added the Evaluator object, and metric plots
+- Added new R2, MSE, MAE metrics
+- Change in the confusion matrix plot function
 ------------------
